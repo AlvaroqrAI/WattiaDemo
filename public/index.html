@@ -539,7 +539,7 @@ function onFile(e){
   document.getElementById('fsel').style.display='flex';
   fileMime=f.type||'application/pdf';
   const rd=new FileReader();
-  rd.onload=r=>{fileB64=r.result.split(',')[1];extractFromFile();};
+  rd.onload=function(e){fileB64=e.target.result.split(',')[1];extractFromFile();};
   rd.readAsDataURL(f);
 }
 
